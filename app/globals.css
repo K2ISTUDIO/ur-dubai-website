@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts (loaded via next/font/google in layout.tsx) ─── */
+
+@layer base {
+  :root {
+    --header-height: 72px;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #F8F5EE;
+    color: #0C0A07;
+    font-family: var(--font-outfit), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(196, 151, 63, 0.2);
+    color: #0C0A07;
+  }
+
+  * {
+    border-color: #DDD5C8;
+  }
+}
+
+@layer utilities {
+  /* Scroll reveal animation classes */
+  .reveal {
+    @apply opacity-0 translate-y-6 transition-all duration-700;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .reveal-fade {
+    @apply opacity-0 transition-opacity duration-700;
+  }
+
+  .reveal-fade.in-view {
+    @apply opacity-100;
+  }
+
+  /* Stagger delays */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+
+  /* Label uppercase tracking */
+  .label {
+    @apply text-xs font-sans font-medium tracking-label uppercase;
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    @apply block h-px bg-gold;
+  }
+
+  /* Container */
+  .container-site {
+    @apply w-full max-w-[1320px] mx-auto px-6 md:px-10 lg:px-16;
+  }
+}
