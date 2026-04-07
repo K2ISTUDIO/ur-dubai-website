@@ -61,12 +61,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/971500000000"
+                  href="https://wa.me/33660417111"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-cream/60 hover:text-gold transition-colors duration-300"
                 >
-                  WhatsApp · +971 50 000 0000
+                  WhatsApp · +33 6 60 41 71 11
                 </a>
               </li>
               <li className="text-cream/40">Dubaï, Émirats Arabes Unis</li>

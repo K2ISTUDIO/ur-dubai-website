@@ -38,7 +38,7 @@ export default function ContactCTA() {
               Démarrer un projet <ArrowRight />
             </Button>
             <a
-              href="https://wa.me/971500000000"
+              href="https://wa.me/33660417111"
               target="_blank"
               rel="noopener noreferrer"
               className="label text-muted hover:text-gold transition-colors duration-300 flex items-center gap-2"

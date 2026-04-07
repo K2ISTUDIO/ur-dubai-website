@@ -17,14 +17,14 @@ const contactMethods = [
   },
   {
     type: 'WhatsApp',
-    value: '+971 50 000 0000',
-    href: 'https://wa.me/971500000000',
+    value: '+33 6 60 41 71 11',
+    href: 'https://wa.me/33660417111',
     desc: 'Réponse rapide, disponible 7j/7',
   },
   {
     type: 'Téléphone',
-    value: '+971 50 000 0000',
-    href: 'tel:+971500000000',
+    value: '+33 6 60 41 71 11',
+    href: 'tel:+33660417111',
     desc: 'Du lundi au samedi, 9h–19h (GST)',
   },
 ]
