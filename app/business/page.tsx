@@ -259,8 +259,8 @@ export default function BusinessPage() {
                 </div>
                 <div className="relative h-44 overflow-hidden">
                   <Image
-                    src="/images/experience/activity-4.jpg"
-                    alt="Famille au Dubai Mall"
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80&auto=format&fit=crop"
+                    alt="Résidence familiale moderne à Dubaï"
                     fill
                     unoptimized
                     className="object-cover object-center"

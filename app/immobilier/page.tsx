@@ -42,23 +42,23 @@ const featuredProjects = [
   {
     label: 'DAMAC Lagoons',
     desc: 'Villas contemporaines entourées de lagons turquoise et de végétation tropicale. Un art de vivre méditerranéen au cœur de Dubaï.',
-    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=85&auto=format&fit=crop',
-    imageAlt: 'Villa DAMAC avec piscine turquoise et verdure',
+    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85&auto=format&fit=crop',
+    imageAlt: 'Villa DAMAC Lagoons avec piscine à débordement et végétation tropicale',
     tag: 'DAMAC Properties',
   },
   {
     label: 'Sobha Hartland',
     desc: 'Résidences de prestige bordées d\'espaces verts et de plans d\'eau cristallins face au Downtown. Sobha Realty redéfinit l\'art de vivre à Dubaï.',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=85&auto=format&fit=crop',
-    imageAlt: 'Sobha Hartland villa avec lagon et palmiers',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85&auto=format&fit=crop',
+    imageAlt: 'Sobha Hartland résidence avec verdure et architecture contemporaine',
     tag: 'Sobha Realty',
   },
   {
-    label: 'Palm Jumeirah',
-    desc: 'Villas pieds dans l\'eau sur la palme artificielle la plus célèbre au monde. Vue mer, ponton privé, prestige absolu.',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop',
-    imageAlt: 'Villa Palm Jumeirah vue mer turquoise',
-    tag: 'Nakheel Properties',
+    label: 'Emaar Beachfront',
+    desc: 'Appartements et penthouses face à la mer avec accès direct à la plage privée. Le projet signature d\'Emaar entre Dubai Marina et Palm Jumeirah.',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=85&auto=format&fit=crop',
+    imageAlt: 'Emaar Beachfront vue mer et accès plage privée',
+    tag: 'Emaar Properties',
   },
 ]
 

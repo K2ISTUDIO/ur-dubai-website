@@ -19,11 +19,6 @@ const developers: Developer[] = [
     h: 26,
   },
   {
-    name: 'Nakheel Properties',
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Nakheel_Logo.png/320px-Nakheel_Logo.png',
-    h: 30,
-  },
-  {
     name: 'Sobha Realty',
     logoUrl: 'https://upload.wikimedia.org/wikipedia/en/9/9a/Sobha_%28company%29.svg',
     h: 26,

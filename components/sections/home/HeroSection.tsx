@@ -6,12 +6,17 @@ export default function HeroSection() {
   return (
     <section
       className="relative min-h-screen bg-dark flex flex-col justify-end overflow-hidden"
-      style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=85&auto=format&fit=crop)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
     >
+      {/* Background image with Ken Burns zoom */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center hero-zoom"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=85&auto=format&fit=crop)',
+          }}
+        />
+      </div>
+
       {/* Dark gradient overlay — bottom-heavy for legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/30" />
 
