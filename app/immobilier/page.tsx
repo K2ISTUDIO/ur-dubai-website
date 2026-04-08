@@ -37,6 +37,31 @@ const process = [
   { step: '04', title: 'Acquisition sécurisée', desc: 'Accompagnement jusqu\'à la signature, gestion des formalités et remise des clés.' },
 ]
 
+// Projets phares — villas & résidences avec lagon, verdure, mer turquoise
+const featuredProjects = [
+  {
+    label: 'DAMAC Lagoons',
+    desc: 'Villas contemporaines entourées de lagons turquoise et de végétation tropicale. Un art de vivre méditerranéen au cœur de Dubaï.',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=85&auto=format&fit=crop',
+    imageAlt: 'Villa DAMAC avec piscine turquoise et verdure',
+    tag: 'DAMAC Properties',
+  },
+  {
+    label: 'Sobha Hartland',
+    desc: 'Résidences de prestige bordées d\'espaces verts et de plans d\'eau cristallins face au Downtown. Sobha Realty redéfinit l\'art de vivre à Dubaï.',
+    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=85&auto=format&fit=crop',
+    imageAlt: 'Sobha Hartland villa avec lagon et palmiers',
+    tag: 'Sobha Realty',
+  },
+  {
+    label: 'Palm Jumeirah',
+    desc: 'Villas pieds dans l\'eau sur la palme artificielle la plus célèbre au monde. Vue mer, ponton privé, prestige absolu.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop',
+    imageAlt: 'Villa Palm Jumeirah vue mer turquoise',
+    tag: 'Nakheel Properties',
+  },
+]
+
 export default function ImmobilierPage() {
   return (
     <>
@@ -44,8 +69,8 @@ export default function ImmobilierPage() {
         category="UR Real Estate"
         title="L'immobilier à Dubaï, accompagné par des experts."
         subtitle="Nous sélectionnons, analysons et sécurisons les meilleures opportunités immobilières à Dubaï. Pour les investisseurs qui veulent agir avec sérénité."
-        image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85&auto=format&fit=crop"
-        imageAlt="Immobilier de luxe à Dubaï"
+        image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1920&q=85&auto=format&fit=crop"
+        imageAlt="Villa de luxe avec piscine turquoise à Dubaï"
       />
 
       {/* Services */}
@@ -75,6 +100,47 @@ export default function ImmobilierPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projets phares */}
+      <section className="py-20 md:py-28 bg-cream-dark">
+        <div className="container-site">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="gold-line w-8" />
+            <span className="label text-gold">Projets phares</span>
+          </div>
+          <h2 className="font-display font-light text-ink text-display-md mb-14 max-w-xl">
+            Lagon, verdure &amp;
+            <br />
+            <span className="italic">mer turquoise.</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredProjects.map((p) => (
+              <div key={p.label} className="group flex flex-col overflow-hidden border border-border">
+                <div className="relative h-60 overflow-hidden">
+                  <Image
+                    src={p.image}
+                    alt={p.imageAlt}
+                    fill
+                    unoptimized
+                    className="object-cover object-center transition-transform duration-700 ease-expo-out group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                  <span className="absolute bottom-4 left-4 label text-gold text-[9px]">{p.tag}</span>
+                </div>
+                <div className="p-6 bg-cream flex flex-col gap-3 flex-1">
+                  <h3 className="font-display font-normal text-ink text-lg">{p.label}</h3>
+                  <p className="text-xs text-muted leading-relaxed flex-1">{p.desc}</p>
+                  <Button href="/contact" variant="ghost" size="sm">
+                    En savoir plus <ArrowRight />
+                  </Button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -138,8 +204,8 @@ export default function ImmobilierPage() {
             <div className="relative overflow-hidden">
               <div className="relative h-80 md:h-96 w-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=900&q=85&auto=format&fit=crop"
-                  alt="Villa de luxe avec piscine à Dubaï"
+                  src="https://images.unsplash.com/photo-1600047508788-786f3865a2d7?w=900&q=85&auto=format&fit=crop"
+                  alt="Villa de luxe avec lagon turquoise à Dubaï"
                   fill
                   unoptimized
                   className="object-cover object-center"

@@ -1,6 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useInView } from '@/lib/hooks'
@@ -17,8 +16,8 @@ const branches = [
     services: ['Acquisition de biens', 'Investissement locatif', 'Accompagnement investisseurs', 'Sélection off-market'],
     color: 'bg-[#1A1612]',
     accent: 'text-gold',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&auto=format&fit=crop',
-    imageAlt: 'Appartement de luxe à Dubaï',
+    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80&auto=format&fit=crop',
+    imageAlt: 'Villa de luxe avec piscine turquoise à Dubaï',
   },
   {
     id: '02',
@@ -27,11 +26,11 @@ const branches = [
     title: 'Des séjours pensés dans les moindres détails',
     description:
       'Conciergerie lifestyle & business, hébergements d\'exception, chauffeur, activités VIP. Vous vivez Dubaï comme une résidence, pas comme un touriste.',
-    services: ['Séjours sur mesure', 'Conciergerie 24/7', 'Chauffeur & transferts', 'Accueil & assistance VIP'],
+    services: ['Yacht privatisé', 'Buggy & dunes', 'Conciergerie 24/7', 'Accueil & assistance VIP'],
     color: 'bg-[#0E1318]',
     accent: 'text-[#7EB8C9]',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&auto=format&fit=crop',
-    imageAlt: 'Piscine de luxe à Dubaï',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80&auto=format&fit=crop',
+    imageAlt: 'Yacht de luxe à Dubaï Marina',
   },
   {
     id: '03',
@@ -40,7 +39,7 @@ const branches = [
     title: 'Créez votre société à Dubaï sans friction',
     description:
       'De la structure juridique adaptée à l\'ouverture de compte bancaire, nous gérons l\'intégralité de votre implantation entrepreneuriale à Dubaï.',
-    services: ['Création de société', 'Structure Free Zone', 'Ouverture de compte', 'Accompagnement stratégique'],
+    services: ['Création de société', 'Structure Free Zone', 'Visa investisseur', 'Accompagnement expatriation'],
     color: 'bg-[#111614]',
     accent: 'text-[#7EB89A]',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
@@ -67,7 +66,7 @@ function BranchCard({ branch, index }: { branch: typeof branches[0]; index: numb
             alt={branch.imageAlt}
             fill
             unoptimized
-            className="object-cover object-center transition-transform duration-700 ease-expo-out group-hover:scale-105"
+            className="object-cover object-center transition-transform duration-700 ease-expo-out group-hover:scale-110 ken-burns"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           {/* Gradient overlay on image */}
