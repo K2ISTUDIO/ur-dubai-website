@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import PageHero from '@/components/sections/PageHero'
 import Button, { ArrowRight } from '@/components/ui/Button'
+import LogoMarquee from '@/components/sections/LogoMarquee'
 
 export const metadata: Metadata = {
   title: 'UR Real Estate — Investissement immobilier à Dubaï',
@@ -100,6 +101,9 @@ export default function ImmobilierPage() {
           </div>
         </div>
       </section>
+
+      {/* Logo marquee — partenaires promoteurs */}
+      <LogoMarquee theme="dark" />
 
       {/* Why Dubai real estate */}
       <section className="py-20 md:py-28 bg-cream-dark">

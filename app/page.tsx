@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/home/HeroSection'
 import BranchesSection from '@/components/sections/home/BranchesSection'
 import WhySection from '@/components/sections/home/WhySection'
 import StatsSection from '@/components/sections/home/StatsSection'
+import LogoMarquee from '@/components/sections/LogoMarquee'
 import ContactCTA from '@/components/sections/home/ContactCTA'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Home() {
       <BranchesSection />
       <WhySection />
       <StatsSection />
+      <LogoMarquee theme="dark" />
       <ContactCTA />
     </>
   )

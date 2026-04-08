@@ -31,6 +31,23 @@
   }
 }
 
+/* ─── Marquee (infinite scroll logos) ─── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 @layer utilities {
   /* Scroll reveal animation classes */
   .reveal {
