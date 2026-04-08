@@ -73,15 +73,30 @@
   }
 }
 
+/* ─── Hero line animation ─── */
+@keyframes hero-line-grow {
+  from { height: 0; opacity: 0; }
+  to   { height: 8rem; opacity: 1; }
+}
+
+.hero-line {
+  animation: hero-line-grow 1s cubic-bezier(0.16, 1, 0.3, 1) 600ms both;
+}
+
 /* ─── Marquee infinite scroll ─── */
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
+.marquee-section {
+  overflow: hidden;
+}
+
 .marquee-viewport {
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
 }
 
 .marquee-track {

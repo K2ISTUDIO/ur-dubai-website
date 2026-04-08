@@ -96,7 +96,7 @@ export default function LogoMarquee({ theme = 'dark' }: LogoMarqueeProps) {
 
   return (
     <section
-      className={`py-14 ${
+      className={`marquee-section py-14 ${
         isDark
           ? 'bg-ink border-y border-cream/[0.06]'
           : 'bg-cream border-y border-border'

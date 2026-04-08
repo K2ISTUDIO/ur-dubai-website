@@ -1,16 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import Button, { ArrowRight } from '@/components/ui/Button'
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 80)
-    return () => clearTimeout(t)
-  }, [])
-
   return (
     <section
       className="relative min-h-screen bg-dark flex flex-col justify-end overflow-hidden"
@@ -26,12 +18,9 @@ export default function HeroSection() {
       {/* Subtle warm vignette */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-dark/40" />
 
-      {/* Vertical accent line */}
+      {/* Vertical accent line — CSS animation */}
       <div
-        className={`absolute top-0 left-1/2 w-px bg-gold/20 transition-all duration-1000 ease-expo-out ${
-          mounted ? 'h-32 opacity-100' : 'h-0 opacity-0'
-        }`}
-        style={{ transitionDelay: '600ms' }}
+        className="absolute top-0 left-1/2 w-px bg-gold/20 hero-line"
       />
 
       {/* Main content */}
@@ -39,10 +28,8 @@ export default function HeroSection() {
         <div className="flex flex-col gap-6 max-w-5xl mx-auto md:mx-0">
           {/* Eyebrow */}
           <div
-            className={`flex items-center gap-3 transition-all duration-700 ease-expo-out ${
-              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '100ms' }}
+            className="flex items-center gap-3 animate-fade-up"
+            style={{ animationDelay: '80ms' }}
           >
             <span className="gold-line w-8" />
             <span className="label text-gold">L'écosystème premium à Dubaï</span>
@@ -50,10 +37,8 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1
-            className={`font-display font-light text-cream text-display-hero transition-all duration-1000 ease-expo-out leading-[1.02] ${
-              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '200ms' }}
+            className="font-display font-light text-cream text-display-hero leading-[1.02] animate-fade-up"
+            style={{ animationDelay: '180ms' }}
           >
             Vivre, investir
             <br />
@@ -63,10 +48,8 @@ export default function HeroSection() {
 
           {/* Sub */}
           <p
-            className={`text-cream/50 text-base md:text-lg leading-relaxed max-w-lg transition-all duration-800 ease-expo-out ${
-              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-            style={{ transitionDelay: '380ms' }}
+            className="text-cream/50 text-base md:text-lg leading-relaxed max-w-lg animate-fade-up"
+            style={{ animationDelay: '320ms' }}
           >
             UR Dubai réunit immobilier, conciergerie et création d&apos;entreprise sous un même toit.
             Un interlocuteur unique. Une expertise totale.
@@ -74,10 +57,8 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div
-            className={`flex flex-col sm:flex-row gap-4 mt-4 transition-all duration-700 ease-expo-out ${
-              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '500ms' }}
+            className="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-up"
+            style={{ animationDelay: '440ms' }}
           >
             <Button href="/contact" variant="outline-light" size="lg">
               Démarrer votre projet <ArrowRight />
@@ -91,10 +72,8 @@ export default function HeroSection() {
 
       {/* Bottom bar — 3 branches */}
       <div
-        className={`relative z-10 border-t border-cream/10 transition-all duration-800 ease-expo-out ${
-          mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        }`}
-        style={{ transitionDelay: '700ms' }}
+        className="relative z-10 border-t border-cream/10 animate-fade-up"
+        style={{ animationDelay: '580ms' }}
       >
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-cream/10">
