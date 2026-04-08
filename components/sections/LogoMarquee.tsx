@@ -3,88 +3,74 @@
 interface Developer {
   name: string
   logoUrl: string
-  /** Apply CSS filter to make logo appear white on dark background */
-  invert?: boolean
-  /** Height override in px (default 28) */
+  /** Height in px — all rendered to consistent visual weight */
   h?: number
 }
 
 const developers: Developer[] = [
   {
     name: 'Emaar Properties',
-    logoUrl: 'https://www.emaar.com/images/emaar-logo.svg',
-    invert: true,
+    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Emaar_Properties_logo.svg',
     h: 22,
   },
   {
     name: 'DAMAC Properties',
     logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Damac_logo.svg',
-    invert: true,
-    h: 28,
+    h: 26,
   },
   {
     name: 'Nakheel Properties',
-    logoUrl: 'https://www.nakheel.com/images/nakheelcorporatelibraries/logos/nakheel-log.svg',
-    invert: true,
-    h: 32,
+    logoUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Nakheel_Logo.png/320px-Nakheel_Logo.png',
+    h: 30,
   },
   {
     name: 'Sobha Realty',
     logoUrl: 'https://upload.wikimedia.org/wikipedia/en/9/9a/Sobha_%28company%29.svg',
-    invert: true,
     h: 26,
   },
   {
     name: 'Meraas',
     logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Meraas-logo.svg',
-    invert: true,
     h: 24,
   },
   {
     name: 'Dubai Properties',
     logoUrl: 'https://www.dp.ae/pictures/logo-dark-en.png',
-    invert: true,
-    h: 30,
+    h: 28,
   },
   {
     name: 'Omniyat',
     logoUrl: 'https://cdn.prod.website-files.com/64cd0df1806781d956403b26/64d0f5a02c9c892bbd0bd804_omniyat-logo.svg',
-    invert: false,
     h: 22,
   },
   {
     name: 'Ellington Properties',
     logoUrl: 'https://ellingtonproperties.ae/wp-content/uploads/Ellington-properties-Logo.png',
-    invert: true,
-    h: 28,
+    h: 26,
   },
   {
     name: 'Binghatti Developers',
     logoUrl: 'https://binghattiweb.imgix.net/logo.svg',
-    invert: false,
-    h: 30,
+    h: 28,
   },
   {
     name: 'Azizi Developments',
-    logoUrl: 'https://logo.clearbit.com/azizidevelopments.com',
-    invert: false,
+    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Azizi_Developments_Logo.png/320px-Azizi_Developments_Logo.png',
     h: 28,
   },
   {
     name: 'Danube Properties',
     logoUrl: 'https://danubeproperties.com/wp-content/uploads/2024/02/header-logo.png',
-    invert: false,
-    h: 30,
+    h: 28,
   },
   {
     name: 'Samana Developers',
     logoUrl: 'https://www.samanadevelopers.com/assets/img/updated-logo/white.png',
-    invert: false,
     h: 26,
   },
 ]
 
-// Duplicate for seamless infinite loop
+// Duplicate for seamless loop
 const track = [...developers, ...developers]
 
 interface LogoMarqueeProps {
@@ -93,6 +79,8 @@ interface LogoMarqueeProps {
 
 export default function LogoMarquee({ theme = 'dark' }: LogoMarqueeProps) {
   const isDark = theme === 'dark'
+  // brightness(0) invert(1) = converts any logo to pure white (consistent on dark bg)
+  const logoFilter = 'brightness(0) invert(1)'
 
   return (
     <section
@@ -114,7 +102,7 @@ export default function LogoMarquee({ theme = 'dark' }: LogoMarqueeProps) {
       <div className="relative">
         {/* Left fade */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
+          className="absolute left-0 top-0 bottom-0 w-16 md:w-28 z-10 pointer-events-none"
           style={{
             background: isDark
               ? 'linear-gradient(to right, #0C0A07, transparent)'
@@ -123,7 +111,7 @@ export default function LogoMarquee({ theme = 'dark' }: LogoMarqueeProps) {
         />
         {/* Right fade */}
         <div
-          className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
+          className="absolute right-0 top-0 bottom-0 w-16 md:w-28 z-10 pointer-events-none"
           style={{
             background: isDark
               ? 'linear-gradient(to left, #0C0A07, transparent)'
@@ -131,7 +119,6 @@ export default function LogoMarquee({ theme = 'dark' }: LogoMarqueeProps) {
           }}
         />
 
-        {/* Scrolling track — hover pauses via CSS (.marquee-viewport:hover .marquee-track) */}
         <div className="marquee-viewport">
           <div className="marquee-track">
             {track.map((dev, i) => (
@@ -139,38 +126,44 @@ export default function LogoMarquee({ theme = 'dark' }: LogoMarqueeProps) {
                 key={`${dev.name}-${i}`}
                 className="flex items-center flex-shrink-0 px-10 md:px-14"
               >
-                {/* Logo image */}
+                {/* Logo */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={dev.logoUrl}
                   alt={dev.name}
-                  height={dev.h ?? 28}
                   draggable={false}
-                  className="select-none max-w-none transition-all duration-500"
+                  className="select-none flex-shrink-0 transition-opacity duration-400"
                   style={{
-                    height: `${dev.h ?? 28}px`,
+                    height: `${dev.h ?? 26}px`,
                     width: 'auto',
-                    opacity: 0.35,
-                    filter: dev.invert
-                      ? 'invert(1) brightness(2)'
-                      : 'brightness(1.1)',
+                    maxWidth: '120px',
+                    opacity: isDark ? 0.4 : 0.35,
+                    filter: isDark ? logoFilter : 'none',
                   }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLImageElement).style.opacity = '0.75')
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLImageElement).style.opacity = '0.35')
-                  }
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.opacity = isDark ? '0.85' : '0.7'
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.opacity = isDark ? '0.4' : '0.35'
+                  }}
                   onError={(e) => {
-                    // Fallback: hide broken images gracefully
+                    // Graceful fallback: show styled name text
                     const el = e.currentTarget as HTMLImageElement
-                    el.style.display = 'none'
+                    const span = document.createElement('span')
+                    span.textContent = dev.name.toUpperCase()
+                    span.style.cssText = `
+                      font-size: 9px;
+                      font-weight: 600;
+                      letter-spacing: 0.18em;
+                      color: ${isDark ? 'rgba(248,245,238,0.4)' : 'rgba(12,10,7,0.35)'};
+                      white-space: nowrap;
+                    `
+                    el.parentNode?.replaceChild(span, el)
                   }}
                 />
-
-                {/* Dot separator */}
+                {/* Separator dot */}
                 <span
-                  className="flex-shrink-0 ml-10 md:ml-14 w-[3px] h-[3px] rounded-full bg-gold/25"
+                  className="flex-shrink-0 ml-10 md:ml-14 w-[3px] h-[3px] rounded-full bg-gold/20"
                 />
               </div>
             ))}

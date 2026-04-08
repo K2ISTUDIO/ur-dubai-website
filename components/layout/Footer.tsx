@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from '@/components/ui/Logo'
 
 const branches = [
   { href: '/immobilier', label: 'UR Real Estate', sub: 'Investissement immobilier' },
@@ -19,9 +20,9 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-0 pb-12 border-b border-cream/10">
           {/* Brand block */}
           <div className="lg:w-1/3">
-            <p className="font-display font-light text-2xl text-cream tracking-[0.18em] uppercase mb-4">
-              UR<span className="mx-2 text-gold">·</span>Dubai
-            </p>
+            <Link href="/" className="inline-block mb-4" aria-label="UR Dubai — Accueil">
+              <Logo variant="light" width={90} />
+            </Link>
             <p className="text-sm leading-relaxed max-w-xs text-cream/50">
               L&apos;écosystème premium pour vivre, investir et entreprendre à Dubaï. Un seul interlocuteur. Une expertise totale.
             </p>

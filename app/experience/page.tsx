@@ -85,8 +85,8 @@ export default function ExperiencePage() {
         category="UR Experience"
         title="Dubaï comme vous n'avez jamais eu l'occasion de le vivre."
         subtitle="Yacht, buggy dans les dunes, skydive, conciergerie 24/7 — des expériences construites autour de vous pour les voyageurs qui refusent l'ordinaire."
-        image="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=85&auto=format&fit=crop"
-        imageAlt="Yacht de luxe Dubaï Marina"
+        image="/images/experience/activity-1.jpg"
+        imageAlt="Activité de luxe à Dubaï"
       />
 
       {/* Intro edito */}
@@ -105,8 +105,8 @@ export default function ExperiencePage() {
               </h2>
               <div className="relative mt-8 h-60 w-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=85&auto=format&fit=crop"
-                  alt="Buggy dans les dunes rouges de Dubaï"
+                  src="/images/experience/activity-2.jpg"
+                  alt="Activité désert Dubaï"
                   fill
                   unoptimized
                   className="object-cover object-center"
@@ -123,8 +123,8 @@ export default function ExperiencePage() {
               </p>
               <div className="mt-4 relative h-52 w-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=85&auto=format&fit=crop"
-                  alt="Yacht privatisé coucher de soleil Dubaï"
+                  src="/images/experience/activity-3.jpg"
+                  alt="Expérience luxe Dubaï"
                   fill
                   unoptimized
                   className="object-cover object-center"

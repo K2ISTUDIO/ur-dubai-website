@@ -75,7 +75,7 @@ export default function BusinessPage() {
         category="UR Business"
         title="Créez votre société à Dubaï. Nous gérons le reste."
         subtitle="Structure adaptée à votre activité, démarches simplifiées, ouverture de compte bancaire, visa et accompagnement à l'expatriation. Une implantation clé en main."
-        image="https://images.unsplash.com/photo-1526779259212-939e64788e3c?w=1920&q=85&auto=format&fit=crop"
+        image="/images/business/city-1.jpg"
         imageAlt="Quartier business de Dubaï"
       />
 
@@ -238,7 +238,7 @@ export default function BusinessPage() {
             <div className="flex flex-col gap-4">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=85&auto=format&fit=crop"
+                  src="/images/business/team-1.jpg"
                   alt="Famille heureuse dans un parc à Dubaï"
                   fill
                   unoptimized
@@ -249,7 +249,7 @@ export default function BusinessPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-44 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&q=80&auto=format&fit=crop"
+                    src="/images/business/office-1.jpg"
                     alt="Enfants à l'école internationale de Dubaï"
                     fill
                     unoptimized
@@ -259,7 +259,7 @@ export default function BusinessPage() {
                 </div>
                 <div className="relative h-44 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&q=80&auto=format&fit=crop"
+                    src="/images/experience/activity-4.jpg"
                     alt="Famille au Dubai Mall"
                     fill
                     unoptimized

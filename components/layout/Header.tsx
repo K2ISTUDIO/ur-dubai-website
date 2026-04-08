@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useScrolled } from '@/lib/hooks'
+import Logo from '@/components/ui/Logo'
 
 const navLinks = [
   { href: '/immobilier', label: 'UR Real Estate' },
@@ -43,13 +44,8 @@ export default function Header() {
       >
         <div className="container-site h-full flex items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className={`font-display font-light text-xl tracking-[0.22em] uppercase transition-colors duration-300 ${
-              isDark ? 'text-cream' : 'text-ink'
-            }`}
-          >
-            UR<span className={`mx-2 ${isDark ? 'text-gold-light' : 'text-gold'}`}>·</span>Dubai
+          <Link href="/" className="flex items-center" aria-label="UR Dubai — Accueil">
+            <Logo variant={isDark ? 'light' : 'dark'} width={68} />
           </Link>
 
           {/* Desktop nav */}
