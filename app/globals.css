@@ -31,23 +31,6 @@
   }
 }
 
-/* ─── Marquee (infinite scroll logos) ─── */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 55s linear infinite;
-  will-change: transform;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
 @layer utilities {
   /* Scroll reveal animation classes */
   .reveal {
@@ -88,4 +71,27 @@
   .container-site {
     @apply w-full max-w-[1320px] mx-auto px-6 md:px-10 lg:px-16;
   }
+}
+
+/* ─── Marquee infinite scroll ─── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
 }
